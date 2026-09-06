@@ -1,0 +1,1367 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background: #0e070b;
+
+    color: #fff;
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(255, 70, 120, 0.13),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(160, 30, 80, 0.08),
+            transparent 30%
+        ),
+
+        #0e070b;
+}
+
+.glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    opacity: 0.12;
+}
+
+.glow-one {
+    background: #ff3f78;
+
+    top: -250px;
+    left: -200px;
+}
+
+.glow-two {
+    background: #8d1743;
+
+    bottom: -250px;
+    right: -200px;
+}
+
+.stars {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.3;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 90px 90px;
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+.progress {
+    position: fixed;
+
+    top: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+
+    z-index: 100;
+
+    gap: 8px;
+}
+
+.progress-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.18);
+
+    transition: 0.4s ease;
+}
+
+.progress-dot.active {
+    background: #ff5688;
+
+    box-shadow:
+        0 0 15px
+        rgba(255,86,136,0.7);
+}
+
+.progress-line {
+    width: 30px;
+    height: 1px;
+
+    background:
+        rgba(255,255,255,0.13);
+}
+
+
+/* =====================================================
+   SCREENS
+===================================================== */
+
+main {
+    position: relative;
+}
+
+.screen {
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        90px
+        25px
+        60px;
+}
+
+.screen.active {
+    display: flex;
+
+    animation:
+        screenIn
+        0.8s
+        ease;
+}
+
+@keyframes screenIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.content {
+    width: min(900px, 100%);
+}
+
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+
+.eyebrow {
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    color: #ff719a;
+
+    opacity: 0.75;
+
+    margin-bottom: 25px;
+}
+
+h1,
+h2,
+h3 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-weight: 400;
+}
+
+h1 {
+    font-size:
+        clamp(
+            55px,
+            9vw,
+            110px
+        );
+
+    line-height: 0.95;
+}
+
+h1 span {
+    display: block;
+
+    color: #ff638f;
+}
+
+h2 {
+    font-size:
+        clamp(
+            35px,
+            6vw,
+            65px
+        );
+
+    margin-bottom: 25px;
+}
+
+h3 {
+    font-size: 28px;
+
+    line-height: 1.25;
+
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    max-width: 500px;
+
+    margin:
+        30px
+        auto
+        35px;
+
+    line-height: 1.8;
+
+    opacity: 0.65;
+}
+
+.small-description {
+    max-width: 550px;
+
+    margin:
+        0
+        auto
+        35px;
+
+    line-height: 1.8;
+
+    opacity: 0.6;
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+.hero {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.big-heart {
+    font-size: 75px;
+
+    color: #ff4f83;
+
+    margin-bottom: 25px;
+
+    animation:
+        heartbeat
+        1.6s
+        ease-in-out
+        infinite;
+
+    text-shadow:
+        0 0 30px
+        rgba(255,70,120,0.4);
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.primary-btn,
+.secondary-btn {
+    border-radius: 100px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.primary-btn {
+    border: none;
+
+    padding:
+        16px
+        30px;
+
+    background: #fff;
+
+    color: #17090e;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,0.25);
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(255,255,255,0.12);
+}
+
+.secondary-btn {
+    padding:
+        14px
+        27px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.22);
+
+    background:
+        rgba(255,255,255,0.05);
+
+    color: #fff;
+
+    margin-top: 25px;
+}
+
+.secondary-btn:hover {
+    transform: translateY(-3px);
+
+    background:
+        rgba(255,255,255,0.11);
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.letter {
+    width: min(650px, 100%);
+
+    margin: 0 auto 35px;
+
+    padding:
+        35px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    backdrop-filter: blur(15px);
+}
+
+.letter p {
+    line-height: 2;
+
+    opacity: 0.72;
+
+    margin-bottom: 20px;
+}
+
+.letter p:last-child {
+    margin-bottom: 0;
+}
+
+.highlight {
+    color: #ff6d98;
+
+    opacity: 1 !important;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   PHOTOS
+===================================================== */
+
+.photo-gallery {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin:
+        30px
+        auto
+        40px;
+
+    flex-wrap: wrap;
+}
+
+.photo-card {
+    width: 300px;
+
+    padding: 10px;
+
+    background: #f3eee9;
+
+    color: #24151b;
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,0.35);
+
+    transition:
+        transform 0.4s ease;
+}
+
+.photo-card:hover {
+    transform:
+        translateY(-10px)
+        rotate(0deg) !important;
+}
+
+.photo-one {
+    transform: rotate(-4deg);
+}
+
+.photo-two {
+    transform: rotate(4deg);
+}
+
+.photo-card img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+}
+
+.photo-card span {
+    display: block;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    padding: 15px 8px 8px;
+}
+
+
+/* =====================================================
+   SONG
+===================================================== */
+
+.song-player {
+    width: min(550px, 100%);
+
+    margin:
+        35px
+        auto
+        30px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    text-align: left;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.09);
+
+    background:
+        rgba(255,255,255,0.04);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+}
+
+.play-button,
+.final-play {
+    flex-shrink: 0;
+
+    width: 65px;
+    height: 65px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ff5688;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 19px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.play-button:hover,
+.final-play:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 30px
+        rgba(255,80,130,0.35);
+}
+
+.song-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.song-info strong {
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+}
+
+.song-info span {
+    opacity: 0.45;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   FINAL INTERACTIVE AREA
+===================================================== */
+
+.final-screen {
+    align-items: stretch;
+
+    padding-top: 80px;
+
+    overflow: hidden;
+}
+
+.surprise-stage {
+    width: min(900px, 100%);
+
+    min-height: 720px;
+
+    margin: auto;
+
+    display: none;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+}
+
+.surprise-stage.active {
+    display: flex;
+
+    animation:
+        surpriseIn
+        0.8s
+        ease;
+}
+
+@keyframes surpriseIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+.instruction {
+    opacity: 0.65;
+
+    margin-bottom: 10px;
+}
+
+.interaction-hint {
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    opacity: 0.3;
+}
+
+
+/* =====================================================
+   ROPE
+===================================================== */
+
+.rope-area {
+    position: relative;
+
+    width: 150px;
+
+    height: 300px;
+
+    margin-top: 20px;
+}
+
+.rope-line {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 5px;
+
+    height: 220px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            to right,
+            #654333,
+            #c49573,
+            #654333
+        );
+}
+
+.rope-handle {
+    position: absolute;
+
+    bottom: 5px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        rgba(255,255,255,0.2);
+
+    background:
+        rgba(255,255,255,0.06);
+
+    font-size: 31px;
+
+    cursor: grab;
+
+    user-select: none;
+
+    touch-action: none;
+
+    z-index: 3;
+}
+
+.rope-handle:active {
+    cursor: grabbing;
+}
+
+
+/* =====================================================
+   HIDDEN MESSAGES
+===================================================== */
+
+.hidden-message {
+    width: min(650px, 100%);
+
+    margin-top: 30px;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    background:
+        rgba(255,255,255,0.035);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+}
+
+.hidden-message.visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    pointer-events: auto;
+}
+
+.message-number {
+    display: block;
+
+    color: #ff668f;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 15px;
+}
+
+.hidden-message p {
+    line-height: 1.9;
+
+    opacity: 0.68;
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   BALLOON
+===================================================== */
+
+.balloon-area {
+    position: relative;
+
+    width: 250px;
+
+    height: 300px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.balloon {
+    border: none;
+
+    background: none;
+
+    font-size: 130px;
+
+    cursor: pointer;
+
+    filter:
+        drop-shadow(
+            0 20px 30px
+            rgba(255,40,100,0.2)
+        );
+
+    animation:
+        floatBalloon
+        2.5s
+        ease-in-out
+        infinite;
+
+    transition: 0.3s;
+}
+
+.balloon:hover {
+    transform: scale(1.08);
+}
+
+.balloon.popped {
+    animation:
+        balloonPop
+        0.4s
+        ease
+        forwards;
+}
+
+@keyframes floatBalloon {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(3deg);
+    }
+
+}
+
+@keyframes balloonPop {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    60% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+}
+
+.pop-text {
+    position: absolute;
+
+    font-family: Georgia, serif;
+
+    font-size: 45px;
+
+    color: #ff6a98;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.pop-text.show {
+    animation:
+        popText
+        0.8s
+        ease
+        forwards;
+}
+
+@keyframes popText {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(0.4);
+    }
+
+    35% {
+        opacity: 1;
+
+        transform:
+            scale(1.2);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            scale(1.4);
+    }
+
+}
+
+
+/* =====================================================
+   CURTAINS
+===================================================== */
+
+.curtain-stage {
+    position: relative;
+
+    width: min(750px, 90vw);
+
+    height: 390px;
+
+    margin:
+        25px
+        auto
+        10px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,70,130,0.18),
+            transparent 60%
+        );
+
+    box-shadow:
+        inset
+        0 0 80px
+        rgba(0,0,0,0.5);
+}
+
+.behind-curtain {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.secret-heart {
+    font-size: 130px;
+
+    color: #ff4f87;
+
+    text-shadow:
+        0 0 30px
+        rgba(255,70,130,0.6);
+
+    animation:
+        heartbeat
+        1.5s
+        infinite;
+}
+
+.curtain {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    width: 52%;
+
+    z-index: 5;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #4b0922 0px,
+            #711438 18px,
+            #4b0922 36px
+        );
+
+    box-shadow:
+        inset
+        0 0
+        30px
+        rgba(0,0,0,0.3);
+
+    transition:
+        transform
+        1.5s
+        cubic-bezier(.7,0,.2,1);
+}
+
+.curtain-left {
+    left: 0;
+}
+
+.curtain-right {
+    right: 0;
+}
+
+.curtain-stage.open
+.curtain-left {
+    transform:
+        translateX(-105%);
+}
+
+.curtain-stage.open
+.curtain-right {
+    transform:
+        translateX(105%);
+}
+
+
+/* =====================================================
+   HEART DOOR
+===================================================== */
+
+.heart-door-container {
+    width: 300px;
+    height: 300px;
+
+    margin-top: 35px;
+
+    perspective: 1000px;
+}
+
+.heart-door {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+    background: none;
+
+    cursor: pointer;
+
+    transform-style: preserve-3d;
+}
+
+.heart-left,
+.heart-right {
+    position: absolute;
+
+    top: 50%;
+
+    font-size: 170px;
+
+    line-height: 1;
+
+    color: #9e1748;
+
+    text-shadow:
+        0 0 30px
+        rgba(255,60,120,0.3);
+
+    transition:
+        transform
+        1.4s
+        cubic-bezier(.7,0,.2,1);
+}
+
+.heart-left {
+    left: 3%;
+
+    transform-origin: right center;
+}
+
+.heart-right {
+    right: 3%;
+
+    transform-origin: left center;
+}
+
+.heart-lock {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 10;
+
+    color: white;
+
+    font-size: 30px;
+
+    transition:
+        opacity 0.5s;
+}
+
+.heart-door.open
+.heart-left {
+    transform:
+        translateX(-80%)
+        rotate(-25deg);
+}
+
+.heart-door.open
+.heart-right {
+    transform:
+        translateX(80%)
+        rotate(25deg);
+}
+
+.heart-door.open
+.heart-lock {
+    opacity: 0;
+}
+
+
+/* =====================================================
+   FINAL MESSAGE
+===================================================== */
+
+.final-message {
+    width: min(700px, 100%);
+
+    margin-top: 30px;
+
+    opacity: 0;
+
+    transform:
+        translateY(50px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+.final-message.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    pointer-events: auto;
+}
+
+.final-heart {
+    font-size: 75px;
+
+    color: #ff4f87;
+
+    animation:
+        heartbeat
+        1.5s
+        infinite;
+}
+
+.final-message h1 {
+    margin:
+        20px
+        0
+        45px;
+}
+
+.final-message h1 span {
+    color: #ff638f;
+}
+
+.final-letter {
+    line-height: 2;
+
+    opacity: 0.7;
+}
+
+.final-letter p {
+    margin-bottom: 18px;
+}
+
+.big-highlight {
+    color: white;
+
+    opacity: 1;
+
+    font-family: Georgia, serif;
+
+    font-size: 24px;
+}
+
+.signature {
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    color: #ff7199;
+
+    margin-top: 35px;
+}
+
+
+/* =====================================================
+   GIFT
+===================================================== */
+
+.birthday-gift {
+    margin-top: 65px;
+
+    padding:
+        45px
+        30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.09);
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    backdrop-filter: blur(15px);
+}
+
+.gift-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+.birthday-gift h3 {
+    margin-bottom: 10px;
+}
+
+.birthday-gift p {
+    opacity: 0.55;
+
+    font-size: 14px;
+}
+
+.final-play {
+    margin: 20px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .progress-line {
+        width: 15px;
+    }
+
+    .screen {
+        padding:
+            80px
+            15px
+            50px;
+    }
+
+    .letter {
+        padding: 25px 20px;
+    }
+
+    .photo-card {
+        width: min(320px, 90vw);
+    }
+
+    .song-player {
+        padding: 20px;
+    }
+
+    .surprise-stage {
+        min-height: 650px;
+    }
+
+    .curtain-stage {
+        height: 280px;
+    }
+
+    .heart-door-container {
+        width: 240px;
+        height: 240px;
+    }
+
+    .heart-left,
+    .heart-right {
+        font-size: 135px;
+    }
+
+    .final-message h1 {
+        font-size: 45px;
+    }
+
+    .birthday-gift {
+        padding: 35px 20px;
+    }
+
+}

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For Millie ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <div class="background">
+        <div class="stars"></div>
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+    </div>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <div class="progress">
+
+        <span
+            class="progress-dot active"
+            data-screen="home"
+        ></span>
+
+        <span class="progress-line"></span>
+
+        <span
+            class="progress-dot"
+            data-screen="message"
+        ></span>
+
+        <span class="progress-line"></span>
+
+        <span
+            class="progress-dot"
+            data-screen="photos"
+        ></span>
+
+        <span class="progress-line"></span>
+
+        <span
+            class="progress-dot"
+            data-screen="song"
+        ></span>
+
+        <span class="progress-line"></span>
+
+        <span
+            class="progress-dot"
+            data-screen="final"
+        ></span>
+
+    </div>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+
+        <!-- =========================
+             1. HOME
+        ========================== -->
+
+        <section
+            id="home"
+            class="screen active"
+        >
+
+            <div class="content hero">
+
+                <p class="eyebrow">
+                    A LITTLE SOMETHING FOR YOU
+                </p>
+
+                <div class="big-heart">
+                    ♥
+                </div>
+
+                <h1>
+                    Happy Birthday,
+                    <span>Millie</span>
+                </h1>
+
+                <p class="subtitle">
+                    I made this little place on the internet
+                    just for you.
+                </p>
+
+                <button
+                    class="primary-btn next-btn"
+                    data-next="message"
+                >
+                    Come inside ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             2. MESSAGE
+        ========================== -->
+
+        <section
+            id="message"
+            class="screen"
+        >
+
+            <div class="content">
+
+                <p class="eyebrow">
+                    SIX MONTHS
+                </p>
+
+                <h2>
+                    I didn't know what you were going to become to me.
+                </h2>
+
+                <div class="letter">
+
+                    <p>
+                        At first, you were just someone I happened
+                        to find. Then somehow, talking to you became
+                        something I started looking forward to.
+                    </p>
+
+                    <p>
+                        And somewhere between all those conversations,
+                        jokes, random moments and late nights...
+                    </p>
+
+                    <p class="highlight">
+                        you stopped feeling like a stranger. ❤️
+                    </p>
+
+                    <p>
+                        And somehow, six months later, here we are.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-btn next-btn"
+                    data-next="photos"
+                >
+                    There's more →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             3. PHOTOS
+        ========================== -->
+
+        <section
+            id="photos"
+            class="screen"
+        >
+
+            <div class="content">
+
+                <p class="eyebrow">
+                    OUR LITTLE MOMENTS
+                </p>
+
+                <h2>
+                    Until We Meet
+                </h2>
+
+                <p class="small-description">
+                    We don't have a real picture together yet.
+                    So I made these instead. ❤️
+                </p>
+
+
+                <div class="photo-gallery">
+
+                    <div class="photo-card photo-one">
+
+                        <img
+                            src="image1.jpg"
+                            alt="A memory for Millie"
+                        >
+
+                        <span>
+                            someday we'll have the real one
+                        </span>
+
+                    </div>
+
+
+                    <div class="photo-card photo-two">
+
+                        <img
+                            src="image2.jpg"
+                            alt="Another memory for Millie"
+                        >
+
+                        <span>
+                            until then...
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="primary-btn next-btn"
+                    data-next="song"
+                >
+                    There's a song too 🎵
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             4. SONG
+        ========================== -->
+
+        <section
+            id="song"
+            class="screen"
+        >
+
+            <div class="content">
+
+                <p class="eyebrow">
+                    I MADE SOMETHING FOR YOU
+                </p>
+
+                <h2>
+                    Until We Meet ❤️
+                </h2>
+
+                <p class="small-description">
+                    Because apparently writing you a paragraph
+                    wasn't enough.
+                </p>
+
+
+                <audio
+                    id="birthdaySong"
+                    src="millie-song.mp3"
+                    preload="metadata"
+                ></audio>
+
+
+                <div class="song-player">
+
+                    <button
+                        id="playBtn"
+                        class="play-button"
+                        aria-label="Play song"
+                    >
+                        ▶
+                    </button>
+
+                    <div class="song-info">
+
+                        <strong>
+                            Until We Meet
+                        </strong>
+
+                        <span id="songStatus">
+                            Press play
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="primary-btn next-btn"
+                    data-next="final"
+                >
+                    Keep going →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             5. FINAL INTERACTIVE
+        ========================== -->
+
+        <section
+            id="final"
+            class="screen final-screen"
+        >
+
+
+            <!-- =================================
+                 STEP 1 — ROPE
+            ================================== -->
+
+            <div
+                id="stage1"
+                class="surprise-stage active"
+            >
+
+                <p class="eyebrow">
+                    ONE LAST THING...
+                </p>
+
+                <h2>
+                    There's something waiting for you.
+                </h2>
+
+                <p class="instruction">
+                    Pull the rope down. 🪢
+                </p>
+
+
+                <div class="rope-area">
+
+                    <div class="rope-line"></div>
+
+                    <button
+                        id="ropeHandle"
+                        class="rope-handle"
+                        aria-label="Pull rope"
+                    >
+                        🪢
+                    </button>
+
+                </div>
+
+                <p class="interaction-hint">
+                    Drag it down
+                </p>
+
+
+                <!-- MESSAGE 1 -->
+
+                <div
+                    id="message1"
+                    class="hidden-message"
+                >
+
+                    <span class="message-number">
+                        01
+                    </span>
+
+                    <h3>
+                        I didn't know what you were going to become to me.
+                    </h3>
+
+                    <p>
+                        At first, you were just someone I happened
+                        to find. Then somehow, talking to you became
+                        something I started looking forward to.
+                    </p>
+
+                    <p>
+                        And somewhere between all those conversations,
+                        jokes, random moments and late nights...
+                    </p>
+
+                    <p class="highlight">
+                        you stopped feeling like a stranger.
+                    </p>
+
+                    <button
+                        id="toStage2"
+                        class="secondary-btn"
+                    >
+                        There's more →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 STEP 2 — BALLOON
+            ================================== -->
+
+            <div
+                id="stage2"
+                class="surprise-stage"
+            >
+
+                <p class="eyebrow">
+                    MESSAGE TWO
+                </p>
+
+                <h2>
+                    And then six months happened. 🎈
+                </h2>
+
+                <p class="instruction">
+                    There's something inside.
+                </p>
+
+
+                <div class="balloon-area">
+
+                    <button
+                        id="balloon"
+                        class="balloon"
+                        aria-label="Pop balloon"
+                    >
+                        🎈
+                    </button>
+
+                    <div
+                        id="popText"
+                        class="pop-text"
+                    >
+                        POP!
+                    </div>
+
+                </div>
+
+
+                <p class="interaction-hint">
+                    Tap the balloon
+                </p>
+
+
+                <!-- MESSAGE 2 -->
+
+                <div
+                    id="message2"
+                    class="hidden-message"
+                >
+
+                    <span class="message-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Six months. ❤️
+                    </h3>
+
+                    <p>
+                        Six months of learning little things about you.
+                        Your moods. Your weirdness. The things that make
+                        you laugh. The things you probably don't even
+                        realize I've noticed.
+                    </p>
+
+                    <p>
+                        Six months isn't forever.
+                    </p>
+
+                    <p>
+                        But it's long enough for someone to leave
+                        a very real place in your heart.
+                    </p>
+
+                    <p class="highlight">
+                        And you've definitely left yours in mine. ❤️
+                    </p>
+
+                    <button
+                        id="toStage3"
+                        class="secondary-btn"
+                    >
+                        There's more →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 STEP 3 — CURTAINS
+            ================================== -->
+
+            <div
+                id="stage3"
+                class="surprise-stage"
+            >
+
+                <p class="eyebrow">
+                    MESSAGE THREE
+                </p>
+
+                <h2>
+                    There's just one thing missing... 🎭
+                </h2>
+
+                <p class="instruction">
+                    Open the curtains.
+                </p>
+
+
+                <div
+                    id="curtainStage"
+                    class="curtain-stage"
+                >
+
+                    <div class="behind-curtain">
+
+                        <div class="secret-heart">
+                            ♥
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="leftCurtain"
+                        class="curtain curtain-left"
+                    ></div>
+
+
+                    <div
+                        id="rightCurtain"
+                        class="curtain curtain-right"
+                    ></div>
+
+                </div>
+
+
+                <button
+                    id="openCurtain"
+                    class="secondary-btn"
+                >
+                    Open the curtains
+                </button>
+
+
+                <!-- MESSAGE 3 -->
+
+                <div
+                    id="message3"
+                    class="hidden-message"
+                >
+
+                    <span class="message-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Until we meet...
+                    </h3>
+
+                    <p>
+                        I wish we had a thousand pictures together.
+                        I wish I could reach through the screen,
+                        steal a hug from you, and actually celebrate
+                        this birthday beside you.
+                    </p>
+
+                    <p>
+                        But we don't have that yet.
+                    </p>
+
+                    <p class="highlight">
+                        Yet.
+                    </p>
+
+                    <p>
+                        Because I don't want this to be a story
+                        that only exists on screens.
+                    </p>
+
+                    <p>
+                        I want the day when
+                        "I miss you" becomes
+                        <strong>"I'm right here."</strong>
+                    </p>
+
+                    <button
+                        id="toStage4"
+                        class="secondary-btn"
+                    >
+                        One last door... ❤️
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 STEP 4 — HEART DOOR
+            ================================== -->
+
+            <div
+                id="stage4"
+                class="surprise-stage"
+            >
+
+                <p class="eyebrow">
+                    THE LAST DOOR
+                </p>
+
+                <h2>
+                    Open the door, Millie.
+                </h2>
+
+                <p class="instruction">
+                    Your birthday surprise is inside. ❤️
+                </p>
+
+
+                <div class="heart-door-container">
+
+                    <button
+                        id="heartDoor"
+                        class="heart-door"
+                        aria-label="Open heart door"
+                    >
+
+                        <span class="heart-left">
+                            ♥
+                        </span>
+
+                        <span class="heart-right">
+                            ♥
+                        </span>
+
+                        <span class="heart-lock">
+                            ✦
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <p class="interaction-hint">
+                    Click the heart
+                </p>
+
+
+                <!-- =================================
+                     FINAL MESSAGE
+                ================================== -->
+
+                <div
+                    id="finalMessage"
+                    class="final-message"
+                >
+
+                    <div class="final-heart">
+                        ♥
+                    </div>
+
+                    <p class="eyebrow">
+                        FOR YOU, MILLIE
+                    </p>
+
+                    <h1>
+                        Happy Birthday,
+                        <span>my love.</span>
+                    </h1>
+
+
+                    <div class="final-letter">
+
+                        <p>
+                            We started as two strangers who happened
+                            to find each other.
+                        </p>
+
+                        <p>
+                            And somehow, six months later, you're
+                            someone I can't imagine not having
+                            in my life.
+                        </p>
+
+                        <p>
+                            I don't know exactly what the future
+                            will look like.
+                        </p>
+
+                        <p class="big-highlight">
+                            I just know I want to see it with you.
+                        </p>
+
+                        <p>
+                            I don't know exactly when we'll get
+                            our first real picture together,
+                            our first real hug, or the first time
+                            I get to celebrate your birthday
+                            beside you.
+                        </p>
+
+                        <p>
+                            But I want those moments.
+                        </p>
+
+                        <p>
+                            I want the day when all these screens
+                            disappear and I can finally look at you
+                            and know that we made it.
+                        </p>
+
+                        <p class="big-highlight">
+                            Until that day, I'll keep choosing you,
+                            loving you, and making memories with you.
+                        </p>
+
+                        <p class="signature">
+                            Happy Birthday, Millie. ❤️
+                        </p>
+
+                        <p class="signature">
+                            I love you.
+                        </p>
+
+                    </div>
+
+
+                    <!-- FINAL GIFT -->
+
+                    <div class="birthday-gift">
+
+                        <div class="gift-icon">
+                            🎁
+                        </div>
+
+                        <h3>
+                            One last little gift...
+                        </h3>
+
+                        <p>
+                            Press play.
+                            This one is yours.
+                        </p>
+
+
+                        <button
+                            id="finalPlay"
+                            class="final-play"
+                        >
+                            ▶
+                        </button>
+
+
+                        <p id="giftStatus">
+                            Until we meet. ❤️
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         SCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
